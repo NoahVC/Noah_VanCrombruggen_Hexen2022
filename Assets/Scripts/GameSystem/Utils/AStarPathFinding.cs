@@ -49,7 +49,7 @@ namespace GameSystem.Utils
                 {
                     var tentativeGScore = gScores[current] + _distance(current, neighbour);
 
-                    if (tentativeGScore < gScores.GetValueOrDefault(neighbour, float.PositiveInfinity))
+                    if (tentativeGScore < gScores.GetValueOrDefaults(neighbour, float.PositiveInfinity))
                     {
                         cameFrom[neighbour] = current;
                         gScores[neighbour] = tentativeGScore;
@@ -82,8 +82,8 @@ namespace GameSystem.Utils
 
             foreach (var node in openSet)
             {
-                var currentFScore = fScores.GetValueOrDefault(currentNode, float.PositiveInfinity);
-                var fScore = fScores.GetValueOrDefault(node, float.PositiveInfinity);
+                var currentFScore = fScores.GetValueOrDefaults(currentNode, float.PositiveInfinity);
+                var fScore = fScores.GetValueOrDefaults(node, float.PositiveInfinity);
                 if (fScore < currentFScore)
                     currentNode = node;
             }
