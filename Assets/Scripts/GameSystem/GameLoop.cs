@@ -66,9 +66,7 @@ public class GameLoop : SingletonMonoBehaviour<GameLoop>
             CreateBoard(8, 8, 3);
 
         CreateDeck();
-
         Deck.Shuffle(3);
-
         Hand = Deck.DealHand(5);
 
         Time.timeScale = 0f;
@@ -189,6 +187,11 @@ public class GameLoop : SingletonMonoBehaviour<GameLoop>
     {
         _stateMachine.CurrentState.StartGame();
         StartScreen.SetActive(false);
+
+
+        //CreateDeck();
+        //Deck.Shuffle(3);
+        //Hand = Deck.DealHand(5);
     }
 
     public void EndGame()

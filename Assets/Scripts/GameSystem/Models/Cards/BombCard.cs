@@ -17,10 +17,10 @@ namespace GameSystem.Models.Cards
 
         public override void OnMouseReleased(Tile playerTile, Tile focusedTile)
         {
-            Board.BombExplode(Tiles(playerTile, focusedTile));
             foreach(var tile in Tiles(playerTile, focusedTile))
             {
-                Board.Take(tile);
+                if (tile != playerTile)
+                    Board.Take(tile);
             }
         }
 
