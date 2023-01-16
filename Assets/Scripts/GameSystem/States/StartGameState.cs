@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using GameSystem;
 using UnityEngine;
+using Utils;
 
 namespace GameSystem.States
 {

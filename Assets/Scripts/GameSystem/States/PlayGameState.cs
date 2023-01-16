@@ -38,6 +38,11 @@ namespace GameSystem.States
 
             _moveManager.MoveCommandProviderChanged -= OnMoveCommandProviderChanged;
         }
+
+        public override void OnCardDragStart(string card)
+        {
+            base.OnCardDragStart(card);
+        }
         public override void Select(HexenPiece hexenPiece)
         {
             if (hexenPiece == null || hexenPiece == _selectedHexenPiece)

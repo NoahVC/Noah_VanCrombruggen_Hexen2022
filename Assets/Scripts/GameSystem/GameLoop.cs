@@ -157,12 +157,12 @@ public class GameLoop : SingletonMonoBehaviour<GameLoop>
     {
         _stateMachine.CurrentState.Select(moveCommand);
     }
-
+    
     public void OnCardDragStart(string card)
     {
         _stateMachine.CurrentState.OnCardDragStart(card);
     }
-
+    
     public void OnCardReleased(Tile hoverTile, string card)
     {
         _stateMachine.CurrentState.OnCardReleased(hoverTile, card);
@@ -187,11 +187,6 @@ public class GameLoop : SingletonMonoBehaviour<GameLoop>
     {
         _stateMachine.CurrentState.StartGame();
         StartScreen.SetActive(false);
-
-
-        //CreateDeck();
-        //Deck.Shuffle(3);
-        //Hand = Deck.DealHand(5);
     }
 
     public void EndGame()
@@ -199,9 +194,6 @@ public class GameLoop : SingletonMonoBehaviour<GameLoop>
         _stateMachine.CurrentState.EndGame();
         EndScreen.SetActive(true);
     }
-
-
-
 
     #endregion
 
